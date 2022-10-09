@@ -9,11 +9,8 @@ If Defined varsbat (
   set varsbat="%varsbat:common7\ide\devenv.exe,1200=VC\Auxiliary\Build\vcvars64.bat%"
 )
 if exist %varsbat% (goto :CALL_VC_VARS_BAT)
-echo Trying to figure out Visual Studio 2022 location...
-for /f "tokens=2* eol=," %%a in ('reg query "HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Classes\CLSID\{33ABD590-0400-4FEF-AF98-5F5A8A99CFC3}\DefaultIcon" ^|findstr /rc:"REG_SZ *"') do set varsbat=%%~b
-If Defined varsbat (
-  set varsbat="%varsbat:common7\ide\devenv.exe,1200=VC\Auxiliary\Build\vcvars64.bat%"
-)
+echo WARNING: unable to find Visual Studio installation. Using defaults.
+set varsbat="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat"
 :CALL_VC_VARS_BAT
 call %varsbat%
 
