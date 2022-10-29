@@ -1,4 +1,6 @@
-# BitBoxApp
+# BitBoxApp-Maximus
+
+* This is fork of BitBoxApp which focuses on enhanced security *
 
 This repo contains the source code for the BitBoxApp and related tools.
 
